@@ -31,6 +31,7 @@ git clone https://github.com/Qrouger/iQ-score
 
 The scripts assume:
 
+- Python 3.11 installed
 - `.a3m` file of each protein is available
 - Each interaction has its own directory
 - Directory names follow the format:
@@ -61,7 +62,7 @@ tar xvzf ccp4-9-setup.tar.gz
 Basic example:
 
 ```bash
-python iq_score.py \
+python iQ-score.py \
     --msa_dir path/to/msa \
     --model_dir path/to/interactions \
     --N_CPU Number of CPU \
