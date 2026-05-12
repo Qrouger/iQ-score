@@ -209,7 +209,6 @@ def main(job, cutoff, surface_thres, ccp4_setup, seq_no_SP) :
 
     ### AlphaFold3 ###
     if os.path.isfile(os.path.join(job,f'{job}_data.json')) : #AF3
-        print(job)
         cif_files = list(Path(result_subdir).glob("*model.cif"))
         pdb = "ranked_0.pdb"
         if os.path.isfile(os.path.join(result_subdir,f'{interaction}_ranked_0.pdb')) == False  : #create ranked_0.pdb for AF3 
@@ -233,7 +232,6 @@ def main(job, cutoff, surface_thres, ccp4_setup, seq_no_SP) :
             check = examine_inter_pae(pae_mtx,lenght,cutoff=cutoff)
             mpDockq_score = obtain_mpdockq2(chain_coords,chain_CB_inds,plddt_per_chain,best_plddt,pdb_path)
             if check :
-                print(check)
                 good_jobs.append(str(job)+"/"+f"{job.split('/')[-1]}_ranked_0.pdb")
                 iptm_ptm.append(iptm_ptm_score)
                 iptm.append(iptm_score)

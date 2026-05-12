@@ -5,13 +5,19 @@ import get_good_inter_pae
 import pandas as pd
 import csv
 import traceback
+import argparse
 
 
-msa_dir = "/data/F_plasmid_complete/feature_mmseq"
-model_dir = "."
-N_CPU = 32
-Path_ccp4 = "/opt/xtal/ccp4-9"
-
+#msa_dir = "/data/F_plasmid_complete/feature_mmseq"
+#model_dir = "."
+#N_CPU = 32
+#Path_ccp4 = "/opt/xtal/ccp4-9"
+parser = argparse.ArgumentParser()
+parser.add_argument("--N_CPU", help="Number of CPUs available for computation ", required=True, type=int)
+parser.add_argument("--Path_ccp4", help="Path of ccp4", required=True, type=str)
+parser.add_argument("--model_dir", help="Path of interactions directory", required=True, type=str)
+parser.add_argument("--msa_dir", help="Path of all MSA", required=True, type=str)
+args = parser.parse_args()
 
 def run_scoring(args) :
     """
@@ -111,4 +117,4 @@ def Score_interaction (msa_dir,model_dir,Path_ccp4,N_CPU) :
             with open(f"./iQ-score_results.csv", "w") as file2 :
                 file2.write(all_lines)
 
-Score_interaction(msa_dir,model_dir,Path_ccp4,N_CPU)
+Score_interaction(args.msa_dir,args.model_dir,args.Path_ccp4, args.N_CPU)
