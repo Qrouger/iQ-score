@@ -14,7 +14,6 @@ This repository provides scripts to:
 
 - Compute iQ-score from AF2/AF3 PPI predictions
 - Parse structural prediction outputs
-- Use `.a3m` multiple sequence alignment (MSA) files
 
 ---
 
@@ -35,9 +34,9 @@ cd iQ-score
 
 The scripts assume:
 
+- `.a3m` file of each protein is available
 - Each interaction has its own directory
 - Directory names follow the format:
-- Each directory contains the corresponding `.a3m` MSA file
 
 ```text
 prot1_and_prot2
