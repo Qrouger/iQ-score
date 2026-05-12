@@ -23,7 +23,6 @@ This repository provides scripts to:
 
 ```bash
 git clone https://github.com/Qrouger/iQ-score
-cd iQ-score
 ```
 
 ---
@@ -65,12 +64,13 @@ Basic example:
 
 ```bash
 python iq_score.py \
-    --input_dir path/to/interactions \
-    --output results.tsv
+    --msa_dir path/to/msa \
+    --model_dir path/to/interactions \
+    --N_CPU Number of CPU \
+    --Path_ccp4 path/to/ccp4
 ```
 
 ---
-
 
 
 ---
