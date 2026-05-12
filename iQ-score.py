@@ -8,9 +8,7 @@ import traceback
 import argparse
 
 
-#msa_dir = "/data/F_plasmid_complete/feature_mmseq"
-#model_dir = "."
-#N_CPU = 32
+
 #Path_ccp4 = "/opt/xtal/ccp4-9"
 parser = argparse.ArgumentParser()
 parser.add_argument("--N_CPU", help="Number of CPUs available for computation ", required=True, type=int)
