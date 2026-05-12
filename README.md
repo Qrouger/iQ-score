@@ -59,8 +59,6 @@ tar xvzf ccp4-9-setup.tar.gz
 
 # Usage
 
-Basic example:
-
 ```bash
 python iQ-score.py \
     --msa_dir path/to/msa \
