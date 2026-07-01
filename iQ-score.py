@@ -60,7 +60,7 @@ def Score_interaction (msa_dir,model_dir,Path_ccp4,N_CPU) :
 
     for dir in os.listdir(model_dir) :
         if "_and_" in dir :
-            ppi_list.append(dir)
+            ppi_list.append(model_dir + "/" + dir)
             prot1 = dir.split("_and_")[0]
             with open(f"{msa_dir}/{prot1}.a3m", "r") as a3m1 :
                 i = 0
