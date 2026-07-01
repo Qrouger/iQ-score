@@ -2,7 +2,7 @@
 
 Code to compute **iQ-score** for protein–protein interaction (PPI) models generated with **AlphaFold2 (AF2)** or **AlphaFold3 (AF3)**.
 
-This repository is designed for large-scale structural PPI analysis workflows and integrates easily with AlphaFold and AlphaPulldown pipelines.
+This repository is designed for large-scale structural protein–protein interaction (PPI) analysis workflows and integrates seamlessly with AlphaFold and AlphaPulldown pipelines. The iQ-score script computes the iQ-score of the last chain (the prey) against all possible interfaces, using a predicted aligned error (PAE) cutoff of 10 Å.
 
 ---
 
