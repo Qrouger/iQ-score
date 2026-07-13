@@ -110,9 +110,8 @@ def Score_interaction (msa_dir,model_dir,Path_ccp4,N_CPU) :
 
                     all_lines = all_lines + line
             for ppi in ppi_list :
-               if ppi.split("/")[-1]+"_ranked_0" not in done_ppi :
-                    line = f"{ppi.split('/')[-1]}_ranked_0,0,0,0,0\n"
-                    all_lines = all_lines + line
+                line = f"{ppi.split('/')[-1]}_ranked_0,0,0,0,0\n"
+                all_lines = all_lines + line
    
     if len(all_lines.strip("\n")) > 1 : #if all_lines is not empty
             with open(f"./iQ-score_results.csv", "w") as file2 :
