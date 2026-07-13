@@ -93,6 +93,7 @@ def Score_interaction (msa_dir,model_dir,Path_ccp4,N_CPU) :
          merged_df = pd.concat(results, ignore_index=True)
          merged_df.to_csv(os.path.join(f"./", "predictions_with_good_interpae.csv"), index=False)
 
+    done_ppi = []
     with open(f"./predictions_with_good_interpae.csv", "r") as result_file :
         reader = csv.DictReader(result_file)
 
@@ -109,6 +110,8 @@ def Score_interaction (msa_dir,model_dir,Path_ccp4,N_CPU) :
                         line =f'{row["jobs"]},{row["pi_score"]},{row["iptm_ptm"]},{row["mpDockQ/pDockQ"]},{str(iQ_score)}\n'
 
                     all_lines = all_lines + line
+                    done_ppi.append(row["jobs"])
+                    
             for ppi in ppi_list :
                 line = f"{ppi.split('/')[-1]}_ranked_0,0,0,0,0\n"
                 all_lines = all_lines + line
