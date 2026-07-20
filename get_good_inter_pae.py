@@ -7,7 +7,6 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "script_pi_score"))
 import pickle
 import json
 import shutil
-#import gemmi
 import logging
 import subprocess
 import gzip
@@ -208,7 +207,8 @@ def main(job, cutoff, surface_thres, ccp4_setup, seq_no_SP) :
             
 
     ### AlphaFold3 ###
-    if os.path.isfile(os.path.join(job,f'{job}_data.json')) : #AF3
+    int = job.split("/")[-1]
+    if os.path.isfile(os.path.join(job,f'{int}_data.json')) or os.path.isfile(os.path.join(job,f'ranked_0_data.json')) : #AF3
         cif_files = list(Path(result_subdir).glob("*model.cif"))
         pdb = "ranked_0.pdb"
         if os.path.isfile(os.path.join(result_subdir,f'{interaction}_ranked_0.pdb')) == False  : #create ranked_0.pdb for AF3 
